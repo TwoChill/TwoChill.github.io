@@ -1,462 +1,330 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="nl">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>M.L. de France</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Portfolio and Curriculum Vitae" />
-	<meta name="keywords"
-		content="m.l. de france, m.l., michael, michael de france, de france, portfolio, curriculum, vitae, curriculum vitae, Python, Junior Software Developer, Junior Python Developer" />
-	<meta name="author" content="Michael de France" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CV van Michael de France â€” technisch onderzoekend, gestructureerd probleemoplosser, autodidact.">
+<title>Michael de France â€” CV</title>
+<style>
+  :root {
+    --bg: #f4f6f4;
+    --surface: #fdfdfc;
+    --ink: #1d2624;
+    --ink-soft: #46534f;
+    --accent: #0b5d56;
+    --accent-soft: #0b5d5620;
+    --rail: #c5cec9;
+    --line: #dde3df;
+    --mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas, Menlo, monospace;
+    --sans: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181a;
+      --surface: #1a2225;
+      --ink: #e4e9e7;
+      --ink-soft: #a7b3ae;
+      --accent: #6fd8cb;
+      --accent-soft: #6fd8cb26;
+      --rail: #34413f;
+      --line: #2a3437;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible, :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
 
-	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-	<link href="css/Kaushan_Script.css" rel="stylesheet">
+  /* ---------- header ---------- */
+  header {
+    padding: 4rem 0 2.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .tagline {
+    margin-top: 0.9rem;
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .tagline .sep { color: var(--accent); padding: 0 0.35rem; }
+  .profiel {
+    margin-top: 1.5rem;
+    max-width: 38rem;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+  .header-links { margin-top: 1.5rem; font-family: var(--mono); font-size: 0.9rem; }
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+  /* ---------- sections ---------- */
+  section { padding: 2.5rem 0 0.5rem; }
+  h2 {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 1.75rem;
+  }
+  h2::before { content: "Â§ "; opacity: 0.6; }
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+  /* ---------- timeline ---------- */
+  .tijdlijn { list-style: none; position: relative; }
+  .tijdlijn::before {
+    content: "";
+    position: absolute;
+    left: 0.35rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: var(--rail);
+  }
+  .tijdlijn > li {
+    position: relative;
+    padding: 0 0 2.25rem 2rem;
+  }
+  .tijdlijn > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .meta {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .meta b { color: var(--accent); font-weight: 600; }
+  h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; }
+  .org { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .tijdlijn p, .tijdlijn ul.taken { color: var(--ink-soft); font-size: 0.95rem; }
+  ul.taken { margin: 0.35rem 0 0 1.1rem; }
+  ul.taken li { margin-bottom: 0.2rem; }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+  /* ---------- cards / lists ---------- */
+  .kaarten { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); list-style: none; }
+  .kaart {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+  }
+  .kaart h3 { font-size: 1rem; }
+  .kaart .meta { margin-top: 0.15rem; }
+  .kaart p { font-size: 0.92rem; color: var(--ink-soft); margin-top: 0.35rem; }
 
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tags li {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    background: var(--accent-soft);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.3rem 0.65rem;
+  }
+  .tags li small { color: var(--ink-soft); }
+
+  .certs { list-style: none; columns: 2; column-gap: 2rem; }
+  .certs li {
+    break-inside: avoid;
+    font-size: 0.95rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  @media (max-width: 30rem) { .certs { columns: 1; } }
+
+  footer {
+    margin-top: 3rem;
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+</style>
 </head>
-
 <body>
 
-	<div class="fh5co-loader"></div>
+<header>
+  <div class="wrap">
+    <span class="kicker">// curriculum vitae</span>
+    <h1>Michael de France</h1>
+    <p class="tagline">Technisch onderzoekend<span class="sep">Â·</span>gestructureerd probleemoplosser<span class="sep">Â·</span>autodidact</p>
+    <p class="profiel">Zelfstandig werkend, technisch onderzoekend en gestructureerd probleemoplosser. Zoekt een praktische, afgebakende technische functie met ruimte om autonoom en in eigen tempo te werken.</p>
+    <p class="header-links"><a href="https://github.com/TwoChill" rel="me">github.com/TwoChill</a></p>
+  </div>
+</header>
 
-	<div id="page">
-		<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner"
-			style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+<main class="wrap">
 
-			<div class="overlay">
-				<a href="index.html"><img alt="Dutch Translation"
-						src="https://d33wubrfki0l68.cloudfront.net/877bc88ddba562a1cf1c6aef78dbe65b65eaefac/c0702/images/general/flag_netherlands-877bc88d.png"
-						width="30">
-					<!-- a href="index_english.html"><img alt="English Translation"
-							src="https://d33wubrfki0l68.cloudfront.net/b5b8a1a59f3d1b6842b23424ee80a9ab621391e0/3e930/images/general/flag_uk-b5b8a1a5.png"
-							width="30"> -->
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="display-t js-fullheight">
-							<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-								<div class="profile-thumb" style="background: url(images/user-3.jpg);">
-								</div>
-								<h1><span>Michael Leslie de France</span>
-								</h1><br>
-								<h3>Python Developer</h3>
-								<p>
-									<ul class="fh5co-social-icons">
-										<li>
-											<a href="https://twitter.com/mike32326253"><i class="icon-twitter2"></i></a>
-											<a href="https://github.com/twochill"><i class="icon-github2"></i></a>
-											<a href="https://www.linkedin.com/in/mdefrance88"><i
-													class="icon-linkedin2"></i></a>
-										</li>
-									</ul>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+  <section aria-labelledby="h-ervaring">
+    <h2 id="h-ervaring">Ervaring</h2>
+    <ol class="tijdlijn">
+      <li>
+        <span class="meta"><b>okt 2019 â€“ heden</b> Â· parttime 32u Â· Amsterdam</span>
+        <h3>Medior Technisch Medewerker â€” Transport &amp; logistiek</h3>
+        <p class="org">ARGO360 Â· ICT-recycling / datacenter-logistiek</p>
+        <ul class="taken">
+          <li>Zelfstandig verantwoordelijk voor voorbereiding, laden en veilig transporteren van ICT-apparatuur door heel Nederland (incidenteel buitenland).</li>
+          <li>Ontmantelen en verhuizen van ICT-infrastructuur uit datacentra: racks, servers, netwerkapparatuur.</li>
+          <li>Grote bedrijfsverhuizingen; klantcontact op locatie, organiseren van demontage en inladen.</li>
+        </ul>
+        <p style="margin-top:0.35rem;">Werkt momenteel met aangepast rooster.</p>
+      </li>
+      <li>
+        <span class="meta"><b>mei 2017 â€“ mei 2019</b> Â· Amsterdam e.o.</span>
+        <h3>Gespecialiseerd koerier</h3>
+        <p class="org">SkyNet Worldwide Express Nederland</p>
+        <p>Internationaal en nationaal transport van pakketten en gespecialiseerde zendingen; route-planning en klantcontact.</p>
+      </li>
+      <li>
+        <span class="meta"><b>okt 2015 â€“ mei 2017</b></span>
+        <h3>Zelfstudie &amp; persoonlijke projecten</h3>
+        <p>HeroriÃ«ntatie; autodidactische zelfstudie Python en persoonlijke ontwikkeling.</p>
+      </li>
+      <li>
+        <span class="meta"><b>sep 2014 â€“ okt 2015</b> Â· Randstad</span>
+        <h3>Koerier</h3>
+        <p class="org">Ricoh Nederland</p>
+        <p>Transport van kantoor- en ICT-apparatuur; klantcontact bij oplever- en servicepunten.</p>
+      </li>
+      <li>
+        <span class="meta"><b>jul 2013 â€“ sep 2014</b></span>
+        <h3>Diverse bezorg-werkzaamheden</h3>
+        <p class="org">o.a. PostNL</p>
+        <p>OriÃ«ntatie op arbeidsmarkt na MBO-4.</p>
+      </li>
+      <li>
+        <span class="meta"><b>jan 2012 â€“ jun 2012</b> Â· Hoofddorp</span>
+        <h3>Stage Risicomanagement</h3>
+        <p class="org">Atalmedial (Spaarne Gasthuis)</p>
+        <p>Bouwen en implementeren van internetfilter (Calamaris, Linux); risicoanalyse op basis van gedragscode; rapport risicomanagement.</p>
+      </li>
+      <li>
+        <span class="meta"><b>sep 2011 â€“ jan 2012</b> Â· Haarlem</span>
+        <h3>Stage ICT-medewerker</h3>
+        <p class="org">Ripfacility BV</p>
+        <p>Digitaliseren van muziek voor high-end bedrijven; onderhoud ICT-infrastructuur.</p>
+      </li>
+      <li>
+        <span class="meta"><b>sep 2008 â€“ jan 2009</b> Â· Amsterdam</span>
+        <h3>Stage ICT-beheer</h3>
+        <p class="org">Huygens College</p>
+        <p>Systeembeheer op een middelbare school; leidinggevende rol in project om ruim 500 computers te updaten; ICT-ondersteuning: hardware, storingen, servers, netwerken, backups.</p>
+      </li>
+    </ol>
+  </section>
 
-		<div id="fh5co-about" class="animate-box">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>About Me</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<ul class="info">
-							<li><span class="first-block"><br></span><span class="second-block">
-									<h3>Personalia</h3>
-								</span></li>
+  <section aria-labelledby="h-opleiding">
+    <h2 id="h-opleiding">Opleiding</h2>
+    <ul class="kaarten">
+      <li class="kaart">
+        <h3>MBO-4 Particulier Digitaal Rechercheur</h3>
+        <span class="meta">ROC van Amsterdam Â· afgerond 2013</span>
+        <p>Onderzoeks- en analyseprofiel. Kennis van pentesting-tools, steganografie en encryptie. SVPB-certificaat behaald.</p>
+      </li>
+      <li class="kaart">
+        <h3>MBO-3 ICT-Beheer</h3>
+        <span class="meta">ROC van Amsterdam Â· afgerond Â±2011</span>
+        <p>Netwerkbeheer, systeembeheer en digitale vaardigheden (destijds MCSA/MCSE en ECDL/ICDL modulair afgerond).</p>
+      </li>
+    </ul>
+  </section>
 
-							<li><span class="first-block">Naam:</span><span class="second-block">Michael de
-									France</span>
-							<li><span class="first-block">Email:</span><span
-									class="second-block">mdefrance1988@gmail.com</span>
-							</li>
-							</li>
-							<li><span class="first-block">Addres:</span><span class="second-block">Nederland
-									Amsterdam
-								</span></li>
-						</ul>
-					</div>
-					<div class="col-md-8">
-						<h2>Profiel</h2>
+  <section aria-labelledby="h-cursussen">
+    <h2 id="h-cursussen">Cursussen</h2>
+    <ul class="certs">
+      <li>Diploma Snel Lezen â€” NHA (Nederlandse Handels Academie)</li>
+      <li>Diploma Soft Skills â€” NHA</li>
+    </ul>
+  </section>
 
-						<p>Uit het oplossen van puzzels waarmee werkende programma's worden neer gezet voel ik
-							voldoening. Ik beschik over een goed inzicht, kan analytisch denken en ik ben creatief.
-							Deze eigenschappen zorgen ervoor dat ik op een efficiente en effectieve wijze taken kan
-							afronden.
-						</p>
-						<p>
-							<ul class="fh5co-social-icons">
-								<li><a href="https://twitter.com/mike32326253"><i class="icon-twitter2"></i></a>
-								</li>
-								<li><a href="https://www.linkedin.com/in/mdefrance88"><i class="icon-linkedin2"></i></a>
-								</li>
-							</ul>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+  <section aria-labelledby="h-certificaten">
+    <h2 id="h-certificaten">Certificaten &amp; licenties</h2>
+    <ul class="certs">
+      <li>Rijbewijs C + Code 95 (2024)</li>
+      <li>Rijbewijs B</li>
+      <li>VCA</li>
+      <li>Heftruckcertificaat</li>
+    </ul>
+  </section>
 
-		<div id="fh5co-resume" class="fh5co-bg-color">
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Curriculum Vitae</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 col-md-offset-0">
-						<ul class="timeline">
-							<li class="timeline-heading text-center animate-box">
-								<div>
-									<h3>Relevante Werk Ervaring</h3>
-								</div>
-							</li>
-							<li class="animate-box timeline-unverted">
-								<div class="timeline-badge"><i class="icon-stopwatch"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Risicoanalist</h3>
-										<span class="company">Spaarne Ziekenhuis / Atal Medial</span>
-									</div>
-									<div class="timeline-body">
+  <section aria-labelledby="h-vaardigheden">
+    <h2 id="h-vaardigheden">Vaardigheden</h2>
+    <ul class="tags">
+      <li>Python <small>Â· autodidactisch, vanaf Â±2019, persoonlijke projecten</small></li>
+      <li>HTML / web design <small>Â· basis</small></li>
+      <li>Linux <small>Â· basis: command line, configuratie</small></li>
+      <li>Git / GitHub</li>
+      <li>Claude Code <small>Â· AI-geassisteerd bouwen en experimenteren</small></li>
+      <li>MS Office</li>
+      <li>Nederlands <small>Â· moedertaal</small></li>
+      <li>Engels <small>Â· goed</small></li>
+    </ul>
+  </section>
 
-										<p>Een <b>raport risicoanalyse</b> geproduceerd om kritieke onderdelen van de
-											afdeling te identificeren.<br>
-											<br><b>Webfilter</b> (<b>Calamares</b>) geproduceerd en geïmplementeerd
-											<u>ter bescherming inbreuk via het internet</u>.<br>
-											<br>Zorg bijdragen voor de <u>bescherming van bedrijfsgegevens</u></p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Servicedesk Medewerker</h3>
-										<span class="company">Nederlands Intern Group<br>Naarden-Bussum</span>
-									</div>
-									<div class="timeline-body">
-										<p><b>Training</b> gevolgd beroep: <u>Servicedeskmedewerker</u>.<br>
-											<b>Ondersteuning</b> verleend aan <u>klanten</u><br>
-											<u>Documenteren</u> en <u>rapporteren</u> van IT problemen.
-										</p>
-									</div>
-								</div>
-							</li><br><br>
-							<li class="timeline-heading text-center animate-box">
-								<div>
-									<h3>Werk Ervaring</h3>
-								</div>
-							</li>
-							<li class="animate-box timeline-unverted">
-								<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Chauffeur / Koerier</h3>
-										<span class="company">SkyNet / Ricoh<br>Amsterdam</span>
-									</div>
-									<div class="timeline-body">
-										<p><b>Verantwoordelijk</b> voor: transporteren van goederen<br>
-											Klanten contact onderhouden<br>
-											<b>Deadlines</b> halen en eigen route inplannen</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Hiker</h3>
-										<span class="company">Koopman<br>Amsterdam</span>
-									</div>
-									<div class="timeline-body">
-										<p><b>Verantwoordelijk</b> voor: het transporteren van <br>high-end
-											auto's voor onderhoud, en verkoop<br> naar locaties bij de dokken of bij
-											klanten.</p>
-									</div>
-								</div>
-							</li><br><br>
-							<li class="timeline-heading text-center animate-box">
-								<div>
-									<h3>Opleidingen</h3>
-								</div>
-							</li>
-							<li class="animate-box timeline-unverted">
-								<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Python Ontwikkelaar</h3>
-										<span class="company">Zelfstudie<br>Heden</span>
-									</div>
-									<div class="timeline-body">
-										<p><a href="http://github.com/TwoChill">
-												<u> Github Pagina</u>
-											</a>
-										</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Particulier Digitaal Rechercheur</h3>
-										<span class="company">R.O.C. van Amsterdam / MBO-4</span>
-									</div>
-									<div class="timeline-body">
-										<p> <b>SVPB</b> certificate behaald<br>
-											Kennis van <u>pentesting-tools</u><br>
-											Kennis van <u>steganografie</u> en <u>encryptie</u><br>
-											Training in sterk <u>analytisch denkvaardigheid</u>
-											.</p>
-									</div>
-								</div>
-							</li>
-							<li class="animate-box timeline-unverted">
-								<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">It Medewerker Beheer</h3>
-										<span class="company">R.O.C. van Amsterdam / MBO-3</span>
-									</div>
-									<div class="timeline-body">
+  <section aria-labelledby="h-projecten">
+    <h2 id="h-projecten">Projecten (hobby)</h2>
+    <ul class="kaarten">
+      <li class="kaart">
+        <h3>Autonome social-media agent</h3>
+        <p>Persoonlijk experimenteel project, AI-ondersteund opgezet op eigen server (Linux, database, scheduling).</p>
+      </li>
+      <li class="kaart">
+        <h3>Digitaal onderzoek / OSINT</h3>
+        <p>Verkenning op studieniveau met Python.</p>
+      </li>
+      <li class="kaart">
+        <h3>Publieke GitHub-projecten sinds 2019</h3>
+        <p><a href="https://github.com/TwoChill">github.com/TwoChill</a> â€” o.a. tekst-RPG, terminal-poker (jokers-wild), name-decoder, validation-agent, candlestick-quiz, message-converter, flashcards.</p>
+      </li>
+    </ul>
+  </section>
 
-										<p><b>MCSA/MCSE</b> Certificaten<br>
-											<b>ECDL</b> Certificaat<br>
-											Leren werken met <b>CISCO</b> systemen</p>
-									</div>
-								</div>
-							</li>
+</main>
 
-							<br><br>
-							<li class="timeline-heading text-center animate-box">
-								<div>
-									<h3>Intership</h3>
-								</div>
-							</li>
-
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge"><i class="icon-stopwatch"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Risicoanalist </h3>
-										<span class="company">Spaarne Ziekenhuis / Atal Medial<br>Hoofddorp</span>
-									</div>
-									<div class="timeline-body">
-										<!-- 
-										<p>Een <b>raport risicoanalyse</b> geproduceerd om kritieke onderdelen van de
-											afdeling te identificeren.<br>
-											<br><b>Webfilter</b> (<b>Calamares</b>) geproduceerd en geïmplementeerd
-											<u>ter bescherming inbreuk via het internet</u>.<br>
-											<br>Zorg bijdragen voor de <u>bescherming van bedrijfsgegevens</u></p> -->
-									</div>
-								</div>
-							</li>
-							<li class="animate-box timeline-unverted">
-								<div class="timeline-badge"><i class="icon-stopwatch"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Digital Medewerker / Digitaal Beveligings Analyst
-										</h3>
-										<span class="company">RipFacility<br>Haarlem</span>
-									</div>
-									<!-- <div class="timeline-body">
-									</div> -->
-								</div>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Systeembeheer Medewerker</h3>
-										<span class="company">Huygens College<br>Amsterdam</span>
-									</div>
-									<div class="timeline-body">
-										<!-- 
-											<p>Een <b>raport risicoanalyse</b> geproduceerd om kritieke onderdelen van de
-												afdeling te identificeren.<br>
-												<br><b>Webfilter</b> (<b>Calamares</b>) geproduceerd en geïmplementeerd
-												<u>ter bescherming inbreuk via het internet</u>.<br>
-												<br>Zorg bijdragen voor de <u>bescherming van bedrijfsgegevens</u></p> -->
-									</div>
-								</div>
-							</li>
-							</li>
-							<li class="timeline-heading text-center animate-box">
-								<div>
-									<br><br>
-									<h3>Workshops</h3>
-								</div>
-							</li>
-							<li class="animate-box timeline-unverted">
-								<div class="timeline-badge"><i class="icon-stopwatch"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">JavaScript / Java </h3>
-										<span class="company">Code For All<br>Utrecht</span>
-									</div>
-
-								</div>
-							</li>
-							<li class="timeline-heading text-center animate-box">
-								<div><br><br>
-									<h3>Cursussen</h3>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge"><i class="icon-stopwatch"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Python</h3>
-										<span class="company">Coursera / Udemy</span>
-									</div>
-									<div class="timeline-body">
-									</div>
-								</div>
-							</li>
-							<li class="animate-box timeline-unverted">
-								<div class="timeline-badge"><i class="icon-stopwatch"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h3 class="timeline-title">Learn Python 3 The Hard Way</h3>
-										<span class="company">Book: Zed A. Shaw</span>
-									</div>
-									<div class="timeline-body">
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="fh5co-work" class="fh5co-bg-dark">
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Portfolio</h2>
-						<h5 style="color: #FFFFFF;"><u>Hover over images</u></h5>
-					</div>
-				</div>
-				<div class="row">
-					<!-- Creating empyt block -->
-					<div class="col-md-2 text-center col-padding animate-box">
-					</div>
-					<!-- Creating empyt block -->
-
-					<div class="col-md-3 text-center col-padding animate-box">
-						<a href="http://github.com/TwoChill/RotDR" class="work"
-							style="background-image: url(images/Tron.jpeg);">
-							<div class="desc">
-								<h3>
-									<font color="white">Rise of the Dragon Rider</font>
-								</h3>
-								<span>Text-Based RPG<br><br>
-									<h6>
-										<font color=#999999>!Under Constructions!</font>
-									</h6>
-								</span>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3 text-center col-padding animate-box">
-						<a href="https://github.com/TwoChill/Message_Converter" class="work"
-							style="background-image: url(images/resyce.jpg);">
-							<div class="desc">
-								<h3>
-									<font color="white">Message Converter</font>
-								</h3>
-								<span>DUTCH -> ISH</span>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3 text-center col-padding animate-box">
-						<a href="https://github.com/TwoChill/Draw_Poker" class="work"
-							style="background-image: url(images/NegativePoker.png);">
-							<div class="desc">
-								<h3>
-									<font color="white">Draw Poker</font>
-								</h3>
-								<span>Mini Game</span><br>
-								<h6>
-									<font color=#999999>!Under Constructions!</font>
-								</h6>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3 text-center col-padding animate-box">
-						<a href="" class="FOO" style="background-image: url(images/portfolio-4.jpg);">
-							<div class="desc">
-								<h3><br></h3>
-								<span><br></span>
-							</div>
-						</a>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-
-
-		<div class="gototop js-top">
-			<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
-		</div>
-
-		<!-- jQuery -->
-		<script src="js/jquery.min.js"></script>
-		<!-- jQuery Easing -->
-		<script src="js/jquery.easing.1.3.js"></script>
-		<!-- Bootstrap -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- Waypoints -->
-		<script src="js/jquery.waypoints.min.js"></script>
-		<!-- Stellar Parallax -->
-		<script src="js/jquery.stellar.min.js"></script>
-		<!-- Easy PieChart -->
-		<script src="js/jquery.easypiechart.min.js"></script>
-		<!-- Google Map -->
-		<!-- Google Maps verwijderd: API-key hoort niet in de broncode -->
-
-		<!-- Main -->
-		<script src="js/main.js"></script>
+<footer>
+  <div class="wrap">
+    <p>Michael de France Â· <a href="https://github.com/TwoChill">github.com/TwoChill</a></p>
+  </div>
+</footer>
 
 </body>
-
 </html>
